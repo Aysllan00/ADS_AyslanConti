@@ -41,7 +41,7 @@ class ArtigoTest {
 		//2. Revisando > Rascunho
 		gerenSegurança.setUsuarioCorrente("MODERADOR");
 		artigo.reprovar();
-		assertTrue(artigo.getEstado() instanceof EstadoRascunho);
+		assertTrue(artigo.getEstado() instanceof EstadoRascunho); //instanceof verifica se a instancia pertence a um objeto
 		
 		artigo.getLogHistorico().forEach(System.out::println);
 	}

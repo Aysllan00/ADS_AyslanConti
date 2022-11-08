@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Produto</title>
+		
+		<style>
+			body {
+				font-family: verdana;
+			}
+			h1 {
+				color: blue;
+				border: 2px solid blue;
+			}
+		</style>
+		
+	</head>
+	
+	<body>
+		<h1>Lista de Produtos</h1>
+		
+		<table border="1">
+			<tr>
+				<td>Descrição</td>
+				<td>Preço</td>
+			</tr>
+			
+			<tr th:each="pvar:${listaDeProdutos}"> //for it -> for(Produto pvar listaDeProdutos){}
+				<td th:text="${pvar.descricao}"/> //Implicitamente chama o pvar.getDescricao()
+				<td th:text="${pvar.preco}"/>
+			</tr>
+		</table>
+	</body>
+	
+</html>
