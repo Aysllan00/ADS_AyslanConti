@@ -20,7 +20,7 @@ public class ProdutoController {
 	public String getProdutos(Model model) {
 		
 		List<Produto> produtos = service.findAll();
-		model.addAttribute("listaDeProdutos", produtos);
+		model.addAttribute("listaDeProdutos", produtos); //Adiciona no map
 		return "lista-de-produtos";
 	}
 }
