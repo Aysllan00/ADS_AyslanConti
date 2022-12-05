@@ -35,9 +35,9 @@ public class BookService {
 	
 	public Optional<Book> findBookById(Long Id) {
 		//Optinal é Wrapper - traz metodos para teste - isPresent() ou isEmpty() // Embrulho para proteger o codigo
-		Optional<Book> bookEncontrado = bookList.stream()	//Mais recursos para trabalhar uma lista
+		Optional<Book> bookEncontrado = bookList.stream()	//Mais recursos para trabalhar uma lista - Coleção
 			.filter(b -> b.getId().equals(Id))              //Expressão lambda
-			.findFirst();
+			.findFirst(); //Do filtro traz o 1° - se não encontrar retorna um opcional
 		
 		return bookEncontrado;
 	}
@@ -51,4 +51,14 @@ public class BookService {
 		
 		return b;
 	}
+	
+	public void updateBook(Book book) {
+		bookList.remove(book);
+		bookList.add(book);
+	}
+	
+	public void delete(Book book) {
+		bookList.remove(book);
+	}
+	
 }
